@@ -1,0 +1,17 @@
+{
+  "name": "harsha-kaptures-website",
+  "version": "1.0.0",
+  "description": "Photography portfolio hosted on GitHub Pages",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "start": "echo 'Host on GitHub Pages - see README.md for instructions'"
+  },
+  "keywords": [
+    "photography",
+    "portfolio",
+    "github-pages"
+  ],
+  "author": "Harsha",
+  "license": "MIT"
+}

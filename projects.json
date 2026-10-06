@@ -1,0 +1,95 @@
+{
+  "projects": [
+    {
+      "_id": "1",
+      "title": "Wedding Photography",
+      "description": "Capturing the essence and emotion of your special day with elegance and timeless beauty.",
+      "coverImage": "images/wedding/cover.jpg",
+      "images": [
+        "images/wedding/cover.jpg",
+        "images/wedding/IMG_0460.JPG",
+        "images/wedding/IMG_0461.JPG",
+        "images/wedding/IMG_0462.JPG",
+        "images/wedding/IMG_0463.JPG",
+        "images/wedding/IMG_0464.JPG",
+        "images/wedding/IMG_0465.JPG",
+        "images/wedding/IMG_0466.JPG",
+        "images/wedding/IMG_0467.JPG",
+        "images/wedding/IMG_0468.JPG",
+        "images/wedding/IMG_0469.JPG",
+        "images/wedding/IMG_0470.JPG",
+        "images/wedding/IMG_0471.JPG",
+        "images/wedding/IMG_0472.JPG",
+        "images/wedding/IMG_0473.JPG",
+        "images/wedding/IMG_0474.JPG",
+        "images/wedding/IMG_0475.JPG"
+      ]
+    },
+    {
+      "_id": "2",
+      "title": "Engagement Shoots",
+      "description": "Intimate moments that tell your love story beautifully and authentically.",
+      "coverImage": "images/engagement/cover.jpg",
+      "images": [
+        "images/engagement/cover.jpg",
+        "images/engagement/IMG_1284.JPG",
+        "images/engagement/IMG_1285.JPG",
+        "images/engagement/IMG_1286.JPG",
+        "images/engagement/IMG_1287.JPG",
+        "images/engagement/IMG_1288.JPG",
+        "images/engagement/IMG_1289.JPG",
+        "images/engagement/IMG_1290.JPG",
+        "images/engagement/IMG_1291.JPG",
+        "images/engagement/IMG_1292.JPG",
+        "images/engagement/IMG_1293.JPG",
+        "images/engagement/IMG_1294.JPG",
+        "images/engagement/IMG_1295.JPG",
+        "images/engagement/IMG_1296.JPG",
+        "images/engagement/IMG_1297.JPG",
+        "images/engagement/IMG_1298.JPG"
+      ]
+    },
+    {
+      "_id": "3",
+      "title": "Taj Mahal & Travel",
+      "description": "Exploring the beauty of iconic locations and cultural heritage through photography.",
+      "coverImage": "images/taj_mahal/cover.jpg",
+      "images": [
+        "images/taj_mahal/cover.jpg",
+        "images/taj_mahal/hxac.jpeg",
+        "images/taj_mahal/original.jpg"
+      ]
+    },
+    {
+      "_id": "4",
+      "title": "Ganesh Festival",
+      "description": "Capturing the vibrant energy and spiritual essence of festival celebrations.",
+      "coverImage": "images/ganesh/cover.jpg",
+      "images": [
+        "images/ganesh/cover.jpg"
+      ]
+    },
+    {
+      "_id": "5",
+      "title": "Holi Celebrations",
+      "description": "The joy, colors, and warmth of family celebrations through vibrant photography.",
+      "coverImage": "images/holi/cover.jpg",
+      "images": [
+        "images/holi/cover.jpg"
+      ]
+    },
+    {
+      "_id": "6",
+      "title": "Portrait Series",
+      "description": "Professional portraits that capture personality and presence beautifully.",
+      "coverImage": "images/wedding/IMG_0470.JPG",
+      "images": [
+        "images/wedding/IMG_0470.JPG",
+        "images/wedding/IMG_0471.JPG",
+        "images/wedding/IMG_0472.JPG"
+      ]
+    }
+  ],
+  "viewMoreEnabled": true,
+  "limit": 6
+}
