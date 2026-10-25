@@ -1,5 +1,5 @@
 /* Import Professional Vintage Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
 
 /* Black-Gold Theme */
 :root {
@@ -76,7 +76,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("./images/damn.png");
+    background-image: url("./images/damn.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -115,14 +115,29 @@ img {
     background: var(--gold);
     border-radius: 50%;
     opacity: 0;
-    animation: particleFloat 8s infinite ease-in-out;
+    box-shadow: 0 0 8px 2px rgba(201, 168, 76, 0.75);
+    animation: particleFloat 22s infinite ease-in-out;
 }
 
 @keyframes particleFloat {
     0% { opacity: 0; transform: translateY(100vh) scale(0); }
-    10% { opacity: 0.6; }
-    90% { opacity: 0.6; }
+    12% { opacity: 0.9; }
+    88% { opacity: 0.85; }
     100% { opacity: 0; transform: translateY(-20vh) scale(1); }
+}
+
+.hero-brand-logo {
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    width: 120px;
+    height: auto;
+    z-index: 3;
+    pointer-events: none;
+    user-select: none;
+    /* White field drops out; the dark mark reads as a light logo on the photo. */
+    filter: grayscale(1) contrast(1.35) invert(1);
+    mix-blend-mode: screen;
 }
 
 .hero-content {
@@ -181,7 +196,8 @@ img {
 
 .monogram-label {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 11px;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 6px;
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
@@ -200,6 +216,10 @@ img {
     text-transform: uppercase;
 }
 
+.hero-title-first {
+    font-size: 0.6em;
+}
+
 .hero-subtitle {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 18px;
@@ -207,7 +227,7 @@ img {
     color: var(--gold);
     text-transform: uppercase;
     margin-bottom: 15px;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .hero-tagline {
@@ -247,6 +267,20 @@ img {
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: flex;
+    }
+
+    .hero-brand-logo {
+        width: 78px;
+        top: 8px;
+        left: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-brand-logo {
+        width: 60px;
+        top: 6px;
+        left: 2px;
     }
 }
 
@@ -288,22 +322,30 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    margin-top: 30px;
-    animation: bounce 2.5s infinite;
+    width: fit-content;
+    margin: 72px auto 0;
+    color: var(--gold);
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.7));
+    animation: bounce 2.4s infinite;
 }
 
-.scroll-text {
+.scroll-label {
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    letter-spacing: 5px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 
 .scroll-indicator svg {
-    width: 24px;
-    height: 24px;
-    color: rgba(255, 255, 255, 0.5);
+    width: 42px;
+    height: 42px;
+}
+
+.scroll-indicator:hover {
+    color: var(--gold-light);
+    opacity: 1;
 }
 
 .view-portfolio-btn {
@@ -647,6 +689,53 @@ img {
     padding: 100px 20px 40px;
 }
 
+.services-section {
+    background-color: var(--bg-primary);
+    padding: 100px 24px;
+    text-align: center;
+}
+
+.services-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 0;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1100px;
+}
+
+.services-list li {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.services-list li:not(:last-child)::after {
+    content: "|";
+    margin: 0 14px;
+    color: var(--gold);
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 60px 18px;
+    }
+
+    .services-list li {
+        font-size: 16px;
+    }
+
+    .services-list li:not(:last-child)::after {
+        margin: 0 8px;
+    }
+}
+
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -689,7 +778,6 @@ img {
 .photo-reveal-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;
     overflow: hidden;
     cursor: pointer;
     background-color: var(--bg-card);
@@ -698,7 +786,7 @@ img {
 
 .photo-image {
     width: 100%;
-    height: 100%;
+    height: auto;
     opacity: 0;
     transition: opacity 0.6s ease;
 }
@@ -709,8 +797,7 @@ img {
 
 .photo-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 
@@ -1153,24 +1240,6 @@ img {
         font-size: 36px;
     }
 
-    /* Mobile additions */
-    .view-portfolio-btn {
-        display: inline-block;
-        border: 1px solid var(--gold);
-        padding: 12px 30px;
-        color: var(--gold);
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-radius: 0;
-        margin-bottom: 20px;
-        font-family: 'Inter', sans-serif;
-    }
-
-    .scroll-indicator {
-        display: none;
-    }
-
     /* Gallery */
     .gallery {
         grid-template-columns: 1fr;
@@ -1599,14 +1668,31 @@ img {
 
 /* ================ FOOTER ================ */
 .site-footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 160px 1fr 160px;
+    align-items: center;
     background-color: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
-    padding: 40px 20px;
+    padding: 24px 20px 32px;
     text-align: center;
 }
 
+.footer-logo {
+    grid-column: 1;
+    justify-self: start;
+    width: 300px;
+    height: auto;
+    margin-left: 4px;
+    filter: grayscale(1) contrast(1.35) invert(1);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    user-select: none;
+}
+
 .footer-content {
-    max-width: 1200px;
+    grid-column: 2;
+    max-width: none;
     margin: 0 auto;
 }
 
@@ -1615,7 +1701,44 @@ img {
     font-size: 18px;
     color: var(--gold);
     letter-spacing: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
+}
+
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    margin-bottom: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.footer-contact a {
+    color: var(--text-secondary);
+}
+
+.footer-contact a:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+
+.footer-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-gold);
+    border-radius: 50%;
+    color: var(--gold);
+}
+
+.footer-instagram:hover {
+    background-color: var(--gold);
+    color: #000;
 }
 
 .footer-copyright {
@@ -1785,10 +1908,11 @@ img {
 /* Footer subtle gradient line */
 .site-footer::before {
     content: '';
+    grid-column: 1 / -1;
     display: block;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin-bottom: 30px;
+    margin-bottom: 18px;
     opacity: 0.3;
 }
 
@@ -1797,4 +1921,20 @@ img {
     .cursor-glow { display: none; }
     .hero-orb { display: none; }
     .lens-flare { width: 150px; height: 150px; top: 10%; right: 5%; }
+
+    .site-footer {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 28px 16px 36px;
+    }
+
+    .footer-logo,
+    .footer-content {
+        grid-column: 1;
+    }
+
+    .footer-logo {
+        width: 110px;
+        margin: 0 0 8px;
+    }
 }

@@ -424,14 +424,15 @@ function initFadeAnimations() {
 function initHeroParticles() {
     const container = document.getElementById('heroParticles');
     if (!container) return;
-    const count = 25;
+    const count = 30;
     for (let i = 0; i < count; i++) {
         const p = document.createElement('div');
+        const size = 3 + Math.random() * 3;
         p.className = 'hero-particle';
         p.style.left = Math.random() * 100 + '%';
-        p.style.animationDelay = Math.random() * 8 + 's';
-        p.style.animationDuration = (6 + Math.random() * 6) + 's';
-        p.style.width = p.style.height = (2 + Math.random() * 3) + 'px';
+        p.style.animationDelay = (-Math.random() * 22) + 's';
+        p.style.animationDuration = (18 + Math.random() * 10) + 's';
+        p.style.width = p.style.height = size + 'px';
         container.appendChild(p);
     }
 }
@@ -510,7 +511,7 @@ function initScrollReveal() {
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     // Apply to stat items, testimonial cards, about section, contact section
-    var selectors = '.stat-item, .testimonial-card, .about-content, .contact-form, .contact-info, .footer-content';
+    var selectors = '.stat-item, .testimonial-card, .about-content, .footer-content';
     document.querySelectorAll(selectors).forEach(function (el) {
         el.classList.add('reveal-on-scroll');
         observer.observe(el);
