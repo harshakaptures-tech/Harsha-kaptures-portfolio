@@ -4,7 +4,6 @@ let viewMoreExpanded = false;
 
 document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
-    initPhotoReveal();
     initStatsCounter();
     initTestimonialsCarousel();
     initScrollToTop();
@@ -18,20 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initLazyLoading();
     loadProjects();
 });
-
-// Peekaboo camera cover - click to reveal photo
-function initPhotoReveal() {
-    const container = document.getElementById('photoReveal');
-    const cameraCover = document.getElementById('cameraCover');
-    const aboutPhoto = document.getElementById('aboutPhoto');
-
-    if (container && cameraCover && aboutPhoto) {
-        container.addEventListener('click', function () {
-            cameraCover.classList.add('hidden');
-            aboutPhoto.classList.add('revealed');
-        });
-    }
-}
 
 // Mobile menu toggle functionality
 function initMobileMenu() {
@@ -179,6 +164,7 @@ function renderGallery(projects, viewMoreEnabled, limit) {
         const desc = (p.description || '').slice(0, 120) + ((p.description || '').length > 120 ? '...' : '');
         return `
             <div class="gallery-item static-project">
+                <div class="gallery-label">${(p.title || '').replace(/</g, '&lt;')}</div>
                 <div class="gallery-image">
                     <img src="${cover}" alt="${(p.title || '').replace(/"/g, '&quot;')}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23ddd%22 width=%22400%22 height=%22300%22/><text x=%2250%25%22 y=%2250%25%22 fill=%22%23999%22 text-anchor=%22middle%22 dy=%22.3em%22>No image</text></svg>'">
                     <div class="gallery-overlay">
@@ -186,7 +172,6 @@ function renderGallery(projects, viewMoreEnabled, limit) {
                         <a href="#" class="album-link-btn" data-album="${p._id}">View Album</a>
                     </div>
                 </div>
-                <div class="gallery-label">${(p.title || '').replace(/</g, '&lt;')}</div>
             </div>`;
     }).join('');
 
